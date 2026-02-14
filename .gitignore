@@ -1,0 +1,4 @@
+.DS_Store
+*.bak
+config/nvim/lazy-lock.json
+config/nvim/.neoconf.json
