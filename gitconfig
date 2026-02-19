@@ -1,8 +1,9 @@
 [user]
-	name = hgimenes
-	email = herculesggimenes@gmail.com
+	name = Hercules Giaretta Gimenes
+	email = hgimenes@brex.com
 [core]
 	pager = delta
+	untrackedCache = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
@@ -11,3 +12,5 @@
 	side-by-side = false
 	line-numbers = true
 	wrap-max-lines = unlimited
+[url "git@github.com:"]
+	insteadOf = https://github.com/

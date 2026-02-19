@@ -23,6 +23,14 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        -- JavaScript / TypeScript
+        vtsls = {
+          filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+        },
+        -- Python
+        pyright = {},
+        -- Markdown structure/links
+        marksman = {},
         graphql = {
           filetypes = { "graphql", "typescript", "typescriptreact", "javascript", "javascriptreact" },
         },
@@ -38,10 +46,28 @@ return {
       ensure_installed = {
         "biome",
         "prettier",
+        "vtsls",
+        "typescript-language-server",
+        "pyright",
+        "marksman",
         "eslint-lsp",
         "graphql-language-service-cli",
         "css-lsp",
         "tailwindcss-language-server",
+      },
+    },
+  },
+
+  -- Make sure the LSP server entries are installed by Mason.
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "vtsls",
+        "pyright",
+        "marksman",
+        "eslint",
+        "graphql",
       },
     },
   },
@@ -61,6 +87,7 @@ return {
         "css",
         "sql",
         "lua",
+        "python",
         "markdown",
         "markdown_inline",
         "yaml",

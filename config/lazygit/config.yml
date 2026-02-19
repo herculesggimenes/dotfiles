@@ -1,4 +1,15 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    # Default (single column): better for narrow screens
+    - colorArg: always
+      pager: >-
+        delta --dark --paging=never --line-numbers
+        --file-style=omit --hunk-header-style='file line-number syntax'
+        --syntax-theme='Dracula'
+
+    # Optional: side-by-side (toggle with '|')
+    - colorArg: always
+      pager: >-
+        delta --dark --paging=never --line-numbers --side-by-side
+        --file-style=omit --hunk-header-style='file line-number syntax'
+        --syntax-theme='Dracula'
