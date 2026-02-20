@@ -2,3 +2,16 @@
 *.bak
 config/nvim/lazy-lock.json
 config/nvim/.neoconf.json
+
+# Keep public repo free from local auth/state if copied here.
+config/codex/auth.json
+config/codex/history.jsonl
+config/codex/models_cache.json
+config/codex/shell_snapshots/
+config/codex/sessions/
+config/codex/tmp/
+config/claude/settings.local.json
+config/claude/history.jsonl
+config/claude/debug/
+config/claude/session-env/
+config/claude/todos/

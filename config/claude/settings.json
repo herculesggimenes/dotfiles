@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "awsAuthRefresh": "aws sso login --profile DataPlatformDev-LimitedUser",
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "true",
+    "AWS_REGION": "us-west-2",
+    "AWS_PROFILE": "DataPlatformDev-LimitedUser",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "WebSearch"
+    ],
+    "deny": []
+  },
+  "model": "us.anthropic.claude-opus-4-6-v1",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/hgimenes/.claude/hooks/attention.sh claude",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/hgimenes/.claude/hooks/attention.sh claude",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/hgimenes/.claude/hooks/attention.sh claude",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/hgimenes/.claude/hooks/gsd-check-update.js\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/hgimenes/.claude/hooks/attention.sh claude",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/hgimenes/.claude/hooks/attention.sh claude",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node \"/Users/hgimenes/.claude/hooks/gsd-statusline.js\""
+  },
+  "alwaysThinkingEnabled": true
+}

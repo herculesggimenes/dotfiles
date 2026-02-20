@@ -1,0 +1,53 @@
+model = "gpt-5.3-codex"
+model_reasoning_effort = "xhigh"
+personality = "pragmatic"
+sandbox_mode = "danger-full-access"
+
+
+notify = ["/Users/hgimenes/.claude/hooks/attention.sh", "codex"]
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+
+[mcp_servers.linear]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.linear.app/sse"]
+
+[mcp_servers.glean]
+url = "https://brex-be.glean.com/mcp/default/sse"
+
+[mcp_servers.datadog-mcp]
+url = "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp"
+
+[projects."/Users/hgimenes/src/brex"]
+trust_level = "trusted"
+
+[projects."/Users/hgimenes"]
+trust_level = "trusted"
+
+[projects."/Users/hgimenes/src"]
+trust_level = "trusted"
+
+[projects."/Users/hgimenes/src/atena"]
+trust_level = "trusted"
+
+[projects."/Users/hgimenes/src/brex-2"]
+trust_level = "trusted"
+
+[projects."/Users/hgimenes/src/brex-3"]
+trust_level = "trusted"
+
+[projects."/Users/hgimenes/src/brex-4"]
+trust_level = "trusted"
+
+[notice.model_migrations]
+gpt-5-codex = "gpt-5.2-codex"
+"gpt-5.2-codex" = "gpt-5.3-codex"
+
+
+[features]
+multi_agent = true
+apps = true
+prevent_idle_sleep = true
+
